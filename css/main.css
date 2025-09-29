@@ -4,8 +4,28 @@
     --over-font-size: 62.5%;
 
     /** Colores Base */
-    --Islamic-Green: #04B90B;
-    --Slate-Gray: #777E90;
+    --chinese-black:#141416;
+    --slate-grey: #777e90;
+    --cadet-blue:#b1b5c3;
+    --bright-gray:#e6e8ec;
+    --cultured:#f5f6fa;
+    --lotion: #fcfcfd;
+
+    --islamic-green:-#04b90b;
+    --aero-blue:#d3f9d5;
+    --light-coral:#ea8484;
+    --lavender-blush:#fcf1f1;
+
+    --green-blue:#106aab;
+    --alice-blue:#f1f7fc;
+    --dark-pink:#f25178;
+    --misty-rose:#fce5e9;
+    --blue-violet:#8d31e9;
+    --magnolia:#f6eefd;
+    --gamboge:#da9f0a;
+    --cornsilk:#fcf6d8;
+    --light-sea-green:#26aca0;
+    --azure:#edfcfb;
 }
 
 html {
@@ -85,7 +105,7 @@ main {
 
 
 /** Media Queries (break point)*/
-@media ( min-width: 568px ) {
+@media ( width > 568px ) {
     .container {
         max-width: 54rem;
         padding: 0 1.6rem;        /** Maneja la distancia entre contenido y el borde del contenedor e incrementa en 8px en cada media query */
@@ -102,42 +122,42 @@ main {
     }
 }
 
-@media ( min-width: 768px ) {
+@media ( width > 768px ) {
     .container {
         max-width: 72rem;
         padding: 0 2.4rem;
     }
 }
 
-@media ( min-width: 1024px ) {
+@media ( width > 1024px ) {
     .container {
         max-width: 99.2rem;
         padding: 0 3.2rem;
     }
 }
 
-@media ( min-width: 1200px ) {
+@media ( width > 1200px ) {
     .container {
         max-width: 114rem;
         padding: 0 4rem;
     }
 }
 
-@media ( min-width: 1400px ) {
+@media ( width > 1400px ) {
     .container {
         max-width: 132rem;
         padding: 0 4,8rem;
     }
 }
 
-@media ( min-width: 1600px ) {
+@media ( width > 1600px ) {
     .container {
         max-width: 144rem;
         padding: 0 5.6rem;
     }
 }
 
-@media ( min-width: 1920px) {
+@media ( width > 1920px ) {
     .container {
         max-width: 160rem;
         padding: 0 6.4rem;
