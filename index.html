@@ -39,10 +39,20 @@
                     <div class="question-1">
                         <h1 class="hero">You've Got Questions. We've Got Taste.</h1>
                         <p>Explore your Taste with speacial food in the special place. This text don’t have any meaning</p>
-                        <a href="#" class="btn btn--light-green">Order now</a>
+                        <div class="box-buttons">
+                            <a href="#" class="btn btn--light-green btn-non-block">Order now</a>
+                            <a href="#" class="btn btn-explore btn-non-block">Explore menu</a>
+                        </div>
                     </div>
                     <div class="question-2 container-image">
-                        <img class="img img-ramen" src="./images/ramen.png" alt="Background Ramen">
+                        <!-- <img class="img img-ramen" src="./images/ramen.png" alt="Background Ramen"> -->
+
+                        <!-- TODO: Falta agregar la imagen del Desktop -->
+                        <picture>
+                            <source media="(width < 768px)" srcset="./images/ramen-portrait.png" />
+                            <source media="(width >= 768px)" srcset="./images/ramen-tablet.png" />
+                            <img class="img img-ramen" src="./images/ramen-tablet.png" alt="Chris standing up holding his daughter Elva" />
+                        </picture>
                     </div>
                 </div>
 
