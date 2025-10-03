@@ -83,6 +83,16 @@ h2 span {
     color: var(--Islamic-Green);
 }
 
+p {
+    color: var(--Slate-Grey);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;  
+    color: var(--Islamic-Green)
+}
+
 /** Header */
 .header {
     border: 1px dotted red;
@@ -170,8 +180,6 @@ main {
 }
 
 .question-1 p {
-    color: var(--Slate-Grey);
-    line-height: 1.6;
     padding-bottom: 1rem;
 }
 
@@ -181,6 +189,74 @@ main {
 
 .question-2 .img-ramen {
     width: 100%;
+}
+
+/** Main: 19 Michelin Stars Chef */
+.section h2 {
+    margin: 5rem 0;
+    text-align: center;
+}
+
+.stars-chef-content {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    margin-bottom: 5rem;
+}
+
+.starts-chef-1,
+.starts-chef-2 {
+    flex: 1 0 50%;
+}
+
+.starts-chef-1 {
+    order: 1;
+}
+
+.starts-chef-2 {
+    order: -1;
+    display: none;
+}
+
+.section-stars-chef h3 {
+    font-size: 1.8rem;
+    color: var(--Islamic-Green);
+    font-family: "Alice", serif;
+}
+
+.starts-chef-1 h3 {
+    order: 1;
+    margin: 0;
+}
+
+.starts-chef-1 > p {
+    border: 1px dotted red;
+    order: 2
+}
+
+.starts-chef-1 > p + p {
+    border: 1px dotted blue;
+    order: 3;
+}
+
+.starts-chef-1 a {
+    order: 4;
+}
+
+.starts-chef-1 {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.starts-chef-1 a::after {
+    color: var(--Islamic-Green) ;
+    content: '→';
+    font-size: 3rem;
+    font-weight: 900;
+    position: relative;
+    right: 0;
+    top: 0;
 }
 
 /** Footer */
@@ -248,8 +324,8 @@ details[open] summary {
     }
 
     .questions-content {
-        display: flex;
         align-items: end;
+        display: flex;
     }
 
     .question-1 {
@@ -301,9 +377,36 @@ details[open] summary {
     h2 {
         font-size: 4.8rem;
     }
+
     .container {
         max-width: 99.2rem;
         padding: 0 3.2rem;
+    }
+
+    .starts-chef-2 {
+        display: block;
+    }
+
+    .starts-chef-1 h3 {
+        max-width: 60%;
+    }
+
+    .starts-chef-1 > p {
+        order: 3;
+    }
+
+    .starts-chef-1 > p + p {
+        order: 4;
+    }
+
+    .starts-chef-1 a {
+        font-size: 1.4rem;
+        max-width: 45%;
+        order: 2;
+        position: absolute;
+        right: 0;
+        top: 0;
+        top: -1.2rem;
     }
 }
 
