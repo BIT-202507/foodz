@@ -10,13 +10,14 @@
     --Islamic-Green: #04b90b;
     --Charleston-Green: #23262F;
     --Slate-Grey: #777e90;
+    --Lotion: #fcfcfd;
 
     /* --chinese-black:#141416;
     
     --cadet-blue:#b1b5c3;
     --bright-gray:#e6e8ec;
     --cultured:#f5f6fa;
-    --lotion: #fcfcfd;
+    
 
     
     --aero-blue:#d3f9d5;
@@ -54,6 +55,7 @@ body {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
+    background-color: var(--Lotion);
 }
 
 h1 {
