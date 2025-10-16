@@ -1,10 +1,11 @@
 .carousel {
+    border: 5px dotted red;
+    box-sizing: border-box;
     display: flex;
     gap: 1em;
     margin: 3em auto;
-    border: 5px dotted red;
-    box-sizing: border-box;
     overflow-x: scroll;
+    scroll-behavior: smooth;        /* Para que el scroll sea suave */
 
     &::-webkit-scrollbar {
         display: none;
@@ -27,23 +28,29 @@
         border-radius: 50%;
         width: 2rem;        
         height: 2rem;       
-        padding: 0.8em;     
+        padding: .8em;     
         display: inline-flex; 
         justify-content: center; 
         align-items: center;  
     }
 
+    &::scroll-button( right ):disabled,
+    &::scroll-button( left ):disabled {
+        opacity: .5;
+        cursor: auto;
+    }
+
     /* .carousel .card */
     .card {
-        height: 12em;
+        align-content: center;
+        background: orange;
+        border-radius: .5rem;
         border: 1px dotted blue;
         box-sizing: border-box;
-        background: orange;
-        padding: 1em;
-        border-radius: .5rem;
-        align-content: center;
-        text-align: center;
         flex: 0 0 20em;
+        height: 12em;
+        padding: 1em;
+        text-align: center;
     }
 }
 
