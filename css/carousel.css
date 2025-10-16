@@ -6,6 +6,33 @@
     box-sizing: border-box;
     overflow-x: scroll;
 
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    &::scroll-button( right ) {
+        content: '>';     
+    }
+
+    &::scroll-button( left ) {
+        content: '<';
+    }
+
+    &::scroll-button( right ),
+    &::scroll-button( left ) {
+        cursor: pointer;
+        background-color: orange;
+        font-size: 1.4em;
+        color: white;
+        border-radius: 50%;
+        width: 2rem;        
+        height: 2rem;       
+        padding: 0.8em;     
+        display: inline-flex; 
+        justify-content: center; 
+        align-items: center;  
+    }
+
     /* .carousel .card */
     .card {
         height: 12em;
