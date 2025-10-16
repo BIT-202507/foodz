@@ -5,7 +5,9 @@
     gap: 1em;
     margin: 3em auto;
     overflow-x: scroll;
-    scroll-behavior: smooth;        /* Para que el scroll sea suave */
+    position: relative;       /* Para que el scroll sea suave */
+    scroll-behavior: smooth;
+    anchor-name: --carousel; 
 
     &::-webkit-scrollbar {
         display: none;
@@ -13,25 +15,31 @@
 
     &::scroll-button( right ) {
         content: '>';     
+        position-area: right center;
+        translate: -50%;
     }
 
     &::scroll-button( left ) {
         content: '<';
+        position-area: left center;
+        translate: 50%;
     }
 
     &::scroll-button( right ),
     &::scroll-button( left ) {
-        cursor: pointer;
+        align-items: center; 
         background-color: orange;
-        font-size: 1.4em;
-        color: white;
         border-radius: 50%;
-        width: 2rem;        
-        height: 2rem;       
-        padding: .8em;     
+        color: white;
+        cursor: pointer;
         display: inline-flex; 
+        font-size: 1.4em;
+        height: 2rem;       
         justify-content: center; 
-        align-items: center;  
+        padding: .8em;     
+        position: fixed; 
+        position-anchor: --carousel;
+        width: 2rem;        
     }
 
     &::scroll-button( right ):disabled,
