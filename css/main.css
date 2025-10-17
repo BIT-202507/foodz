@@ -120,10 +120,6 @@ a {
     padding: 0;
 }
 
-.menu-main {
-    display: none;
-}
-
 .nav-navbar {
     align-items: center;
     display: flex;
@@ -310,15 +306,6 @@ details[open] summary {
     .container {
         max-width: 72rem;
         padding: 0 2.4rem;
-    }
-
-    .menu-main {
-        align-items: center;
-        display: flex;
-        gap: .5rem;
-        list-style: none;
-        margin: 0;
-        padding: 0;
     }
 
     .hamburger-menu {
