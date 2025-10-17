@@ -1,4 +1,10 @@
 .nav-menu-main {
+    --nav-height: 6rem;
+
+    align-items: center;
+    display: flex;
+    height: var(--nav-height);
+    justify-content: space-between;
     position: relative;
 
     .background {
@@ -8,12 +14,12 @@
         display: block;
         display: flex;
         font-size: 3rem;
-        height: 100%;
+        height: calc(100% - var(--nav-height) );
         justify-content: center;
         left: 0;
         overflow: hidden;
         position: fixed;
-        top: 0;
+        top: var(--nav-height);
         width: 100%;
         z-index: 1;
     }
@@ -24,7 +30,7 @@
     background-color: white;
     z-index: 2;
     position: absolute;
-    top: 0;
+    top: calc(var(--nav-height) - 2rem);
     right: 0;
     list-style: none;
     padding: 1rem;
@@ -34,13 +40,14 @@
     }
 
     @media (width > 768px) {
-        position: relative;
         align-items: center;
         display: flex;
         gap: .5rem;
         list-style: none;
         margin: 0;
         padding: 0;
+        position: relative;
+        top: 0;
     }
 
 }

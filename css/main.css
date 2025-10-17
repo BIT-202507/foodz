@@ -96,10 +96,6 @@ a {
 }
 
 /** Header */
-.header {
-    border: 1px dotted red;
-}
-
 .container {
     border: 1px dotted blue;
     box-sizing: border-box;
@@ -118,13 +114,6 @@ a {
 
 .container.questions-container {
     padding: 0;
-}
-
-.nav-navbar {
-    align-items: center;
-    display: flex;
-    height: 4.4rem;
-    justify-content: space-between;
 }
 
 .menu__link {
