@@ -1,4 +1,5 @@
 .carousel {
+    anchor-name: --carousel; 
     border: 5px dotted red;
     box-sizing: border-box;
     display: flex;
@@ -7,7 +8,7 @@
     overflow-x: scroll;
     position: relative;       /* Para que el scroll sea suave */
     scroll-behavior: smooth;
-    anchor-name: --carousel; 
+    scroll-snap-type: x mandatory;  /* Implementa snapping */
 
     &::-webkit-scrollbar {
         display: none;
@@ -58,6 +59,7 @@
         flex: 0 0 20em;
         height: 12em;
         padding: 1em;
+        scroll-snap-align: start;   /* Asegura que el snapping se aplique al inicio de cada elemento del carousel, es decir: que el borde izquiero de cada elemento se alinie con el lado izquierdo del carousel */
         text-align: center;
     }
 }
