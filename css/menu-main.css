@@ -1,9 +1,28 @@
-.menu-main {
-    display: block;
+.nav-menu-main {
+    .background {
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        display: block;
+        display: flex;
+        font-size: 3rem;
+        height: 100%;
+        justify-content: center;
+        left: 0;
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+    }
 }
 
-@media (width > 768px) {
-    .menu-main {
+
+
+.menu-main {
+    display: block;
+
+    @media (width > 768px) {
         align-items: center;
         display: flex;
         gap: .5rem;
@@ -11,4 +30,6 @@
         margin: 0;
         padding: 0;
     }
+
 }
+
