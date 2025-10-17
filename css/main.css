@@ -12,6 +12,9 @@
     --Slate-Grey: #777e90;
     --Lotion: #fcfcfd;
 
+    /** Altura Header */
+    --nav-height: 6rem;
+
     /* --chinese-black:#141416;
     
     --cadet-blue:#b1b5c3;
@@ -158,6 +161,10 @@ a {
 /** Main */
 main {
     flex-grow: 1;
+    left: 0;
+    position: relative;
+    top: var(--nav-height);
+    z-index: -1;
 }
 
 /** Main: Question */

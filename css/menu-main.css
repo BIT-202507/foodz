@@ -1,6 +1,13 @@
-.nav-menu-main {
-    --nav-height: 6rem;
+.header {
+    background: white;
+    left: 0;
+    max-width: 100%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
 
+.nav-menu-main {
     align-items: center;
     display: flex;
     height: var(--nav-height);
