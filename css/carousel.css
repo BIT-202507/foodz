@@ -9,6 +9,13 @@
     position: relative;       /* Para que el scroll sea suave */
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;  /* Implementa snapping */
+    scroll-marker-group: after;     /* Esta propiedad permite establecer un grupo de marcadores de acuerdo a la cantidad de elementos del carousel */
+
+    &::scroll-marker-group {
+        display: flex;
+        justify-content: center;
+        gap: .5em;
+    }
 
     &::-webkit-scrollbar {
         display: none;
@@ -61,7 +68,21 @@
         padding: 1em;
         scroll-snap-align: start;   /* Asegura que el snapping se aplique al inicio de cada elemento del carousel, es decir: que el borde izquiero de cada elemento se alinie con el lado izquierdo del carousel */
         text-align: center;
+
+        &::scroll-marker {
+            content: '';
+            width: 1em;
+            height: 1em;
+            background-color: orange;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        &::scroll-marker:target-current {
+            background-color: orangered;
+        }
     }
+
 
     @media ( width > 768px ) {
         .card {
