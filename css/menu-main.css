@@ -1,4 +1,6 @@
 .nav-menu-main {
+    position: relative;
+
     .background {
         align-items: center;
         background-color: rgba(0, 0, 0, 0.5);
@@ -17,12 +19,22 @@
     }
 }
 
-
-
 .menu-main {
     display: block;
+    background-color: white;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    right: 0;
+    list-style: none;
+    padding: 1rem;
+
+    &:hover {
+        background-color: aquamarine;
+    }
 
     @media (width > 768px) {
+        position: relative;
         align-items: center;
         display: flex;
         gap: .5rem;
