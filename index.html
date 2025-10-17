@@ -11,22 +11,29 @@
     <header class="header">
         <div class="container">
             
-            <nav class="menu-nav nav-navbar">
+            <nav class="nav-menu-main nav-navbar">
                 <div class="site-logo">
                     <a href="index.html">
                         <img src="./images/logo-foodz.png" alt="Logo Foodz">
                     </a>
                 </div>
-                <ul class="menu-main">
+
+                <!-- * Estructura base para alternar el comportamiento del menú desplegable -->
+                <input id="toggle-menu-main" type="checkbox">
+                <label for="toggle-menu-main" id="menu-main__label-open" class="menu-main__label menu-main__label-open">open</label>
+                <label for="toggle-menu-main" id="menu-main__label-close" class="menu-main__label menu-main__label-close">close</label>
+                <label for="toggle-menu-main" id="menu-main__background" class="menu-main__background">
+                    <span>backgroud</span>
+                </label>
+
+                <!-- Menu Principal que se desplegará en dispositivos móviles -->
+                <ul class="menu menu-main">
                     <li class="menu__item"><a href="#" class="menu__link btn active">Home</a></li>
                     <li class="menu__item"><a href="#" class="menu__link btn">Menu</a></li>
                     <li class="menu__item"><a href="#" class="menu__link btn">Blog</a></li>
                     <li class="menu__item"><a href="#" class="menu__link btn">Contact</a></li>
                     <li class="menu__item"><a href="#" class="menu__link btn btn--light-green">Order now</a></li>
                 </ul>
-                <div class="hamburger-menu">
-                    <img src="./images/burger-icon.png" alt="Burger Icon">
-                </div>
             </nav>
             
         </div>
