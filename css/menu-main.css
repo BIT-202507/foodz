@@ -1,3 +1,8 @@
+/* Bloquear scroll global */
+body:has(#toggle-menu-main:checked) {
+    overflow: hidden;
+}
+
 .header {
     background: white;
     left: 0;
@@ -18,8 +23,7 @@
         align-items: center;
         background-color: rgba(0, 0, 0, 0.5);
         color: white;
-        display: block;
-        display: flex;
+        display: none;
         font-size: 3rem;
         height: calc(100% - var(--nav-height) );
         justify-content: center;
@@ -30,17 +34,36 @@
         width: 100%;
         z-index: 1;
     }
+
+    .menu-main,
+    .menu-main__label-close {
+        display: none;
+    }
+
+    /* Genera la interaccion con el elemento input cuando este es seleccionado */
+    #toggle-menu-main:checked {
+        & + .menu-main__label-open {
+            display: none;
+        }
+
+        & ~ .background,
+        & ~ .menu-main,
+        & ~ .menu-main__label-close {
+            display: flex;
+        }
+    }
 }
 
 .menu-main {
-    display: block;
     background-color: white;
-    z-index: 2;
-    position: absolute;
-    top: calc(var(--nav-height) - 2rem);
-    right: 0;
+    display: block;
+    flex-direction: column;
     list-style: none;
     padding: 1rem;
+    position: absolute;
+    right: 0;
+    top: calc(var(--nav-height) - 2rem);
+    z-index: 2;
 
     &:hover {
         background-color: aquamarine;
@@ -48,7 +71,7 @@
 
     @media (width > 768px) {
         align-items: center;
-        display: flex;
+        flex-direction: row;
         gap: .5rem;
         list-style: none;
         margin: 0;
