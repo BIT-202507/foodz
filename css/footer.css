@@ -1,0 +1,46 @@
+/* Reset básico */
+.menu-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.details {
+
+    /* Quita estilos por defecto del summary */
+    & > summary {
+        cursor: pointer;
+        list-style: none;
+        position: relative;
+        font-weight: 600;
+        padding-right: 1.5rem;
+    }
+
+    /* Añadimos un marcador personalizado a la derecha */
+    & > summary::after {
+        content: "▸"; /* marcador personalizado */
+        position: absolute;
+        right: 1rem; /* pegado al borde derecho */
+        top: .7rem;
+        transform: rotate(0deg);
+        transition: transform 0.3s;
+    }
+
+    /* Cuando el <details> está abierto, giramos el marcador */
+    &[open] > summary::after {
+        transform: rotate(90deg);
+    }
+
+    @media (width > 768px) {
+        
+        /* Ocultamos la funcionalidad nativa de colapsado */
+        & > summary {
+            cursor: default;
+            pointer-events: none; /* no se puede clicar */
+        }
+        
+    }
+}
+
+
+
