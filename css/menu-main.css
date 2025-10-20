@@ -76,9 +76,9 @@ body:has(#toggle-menu-main:checked) {
     top: calc(var(--nav-height) - 2rem);
     z-index: 2;
 
-    &:hover {
+    /* &:hover {
         background-color: aquamarine;
-    }
+    } */
 
 }
 

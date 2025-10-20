@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foodz</title>
     <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/menu-main.css">
 </head>
@@ -21,8 +22,12 @@
 
                 <!-- * Estructura base para alternar el comportamiento del menú desplegable -->
                 <input id="toggle-menu-main" type="checkbox">
-                <label for="toggle-menu-main" id="menu-main__label-open" class="menu-main__label menu-main__label-open">open</label>
-                <label for="toggle-menu-main" id="menu-main__label-close" class="menu-main__label menu-main__label-close">close</label>
+                <label for="toggle-menu-main" id="menu-main__label-open" class="menu-main__label menu-main__label-open">
+                    <i class="fa-solid fa-bars"></i>
+                </label>
+                <label for="toggle-menu-main" id="menu-main__label-close" class="menu-main__label menu-main__label-close">
+                    <i class="fa-solid fa-xmark"></i>
+                </label>
                 <label for="toggle-menu-main" id="menu-main__background" class="menu-main__background background">
                     <span></span>
                 </label>
