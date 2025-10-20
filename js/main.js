@@ -46,3 +46,21 @@ handleViewportChange(mqDesktop);
 
 // Escuchar cambios de tamaño de pantalla
 mqDesktop.addEventListener("change", handleViewportChange);
+
+/**
+ * Cierra el menú al hacer clic en un enlace.
+ * Así se desmarca el checkbox antes de navegar.
+ */
+function setupMenuAutoClose() {
+  const menuLinks = document.querySelectorAll(".menu-main .menu__link");
+  if (!toggleEl || menuLinks.length === 0) return;
+
+  menuLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      toggleEl.checked = false;
+    });
+  });
+}
+
+// Ejecutar al cargar
+setupMenuAutoClose();
