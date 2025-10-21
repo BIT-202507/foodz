@@ -1,6 +1,6 @@
 .carousel {
     anchor-name: --carousel; 
-    border: 5px dotted red;
+    /* border: 5px dotted red; */
     box-sizing: border-box;
     display: flex;
     gap: 1em;
@@ -59,13 +59,13 @@
     /* .carousel .card */
     .card {
         align-content: center;
-        background: orange;
+        background: white;
         border-radius: .5rem;
-        border: 1px dotted blue;
+        /* border: 1px dotted blue; */
         box-sizing: border-box;
         flex: 0 0 100%;
-        aspect-ratio: 5 / 3;
-        padding: 1em;
+        aspect-ratio: 5 / 6;
+        padding: 2em;
         scroll-snap-align: start;   /* Asegura que el snapping se aplique al inicio de cada elemento del carousel, es decir: que el borde izquiero de cada elemento se alinie con el lado izquierdo del carousel */
         text-align: center;
 
@@ -80,6 +80,27 @@
 
         &::scroll-marker:target-current {
             background-color: orangered;
+        }
+
+        .card__info {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            .card__description {
+                text-align: left;
+            }
+        }
+
+        .card__info :is( .card__title, .card__tag, .card__stars, .card__reviews, .card__price, .card__order ) {
+            align-items: center;
+            border: 1px dotted blue;
+            box-sizing: border-box;
+            display: flex;
+            flex: 1 0 35%;
+            justify-content: left;
+            margin: 0;
+            padding: 0;
         }
     }
 
