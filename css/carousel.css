@@ -118,10 +118,20 @@
             border: 1px dotted blue;
             box-sizing: border-box;
             display: flex;
-            flex: 1 0 35%;
             justify-content: left;
             margin: 0;
             padding: 0;
+        }
+
+        .card__info :is( .card__title, .card__reviews, .card__price ) {
+            border: 1px solid orange;
+            box-sizing: border-box;
+            flex: 1 0 70%;
+        }
+        .card__info :is( .card__tag, .card__stars, .card__order ) {
+            border: 1px solid chocolate;
+            box-sizing: border-box;
+            flex: 0 1 auto;
         }
     }
 
