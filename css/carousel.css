@@ -4,33 +4,21 @@
     box-sizing: border-box;
     display: flex;
     gap: 1em;
-    margin: 3em auto;
+    margin: 3em auto 5em auto;
     overflow-x: scroll;
     position: relative;       /* Para que el scroll sea suave */
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;  /* Implementa snapping */
-    scroll-marker-group: after;     /* Esta propiedad permite establecer un grupo de marcadores de acuerdo a la cantidad de elementos del carousel */
+    /*scroll-marker-group: after;*/     /* Esta propiedad permite establecer un grupo de marcadores de acuerdo a la cantidad de elementos del carousel */
 
-    &::scroll-marker-group {
+    /* &::scroll-marker-group {
         display: flex;
         justify-content: center;
         gap: .5em;
-    }
+    } */
 
     &::-webkit-scrollbar {
         display: none;
-    }
-
-    &::scroll-button( right ) {
-        content: '>';     
-        position-area: right center;
-        translate: -50%;
-    }
-
-    &::scroll-button( left ) {
-        content: '<';
-        position-area: left center;
-        translate: 50%;
     }
 
     &::scroll-button( right ),
@@ -40,7 +28,7 @@
         border-radius: 50%;
         color: white;
         cursor: pointer;
-        display: inline-flex; 
+        display: flex; 
         font-size: 1.4em;
         height: 2rem;       
         justify-content: center; 
@@ -48,7 +36,21 @@
         position: fixed; 
         position-anchor: --carousel;
         width: 2rem;        
+        position-area: center bottom;
+        translate: 0 50%;
     }
+
+    &::scroll-button( right ) {
+        content: '>';  
+        translate: 60% 50%;   
+    }
+
+    &::scroll-button( left ) {
+        content: '<';
+        translate: -60% 50%;
+    }
+
+   
 
     &::scroll-button( right ):disabled,
     &::scroll-button( left ):disabled {
@@ -163,10 +165,15 @@
         
     }
 
+    @media ( width > 567px ) {
+        .card {
+            flex: 1 0 100%;
+        }
+    }
 
     @media ( width > 768px ) {
         .card {
-            flex: 1 0 48.8%;
+            flex: 1 0 47.8%;    
 
             .card__info {
                 .card__description {
@@ -184,7 +191,7 @@
 
     @media ( width > 1024px ) {
         .card {
-            flex: 1 0 32.8%;
+            flex: 1 0 32%;
         }
     }
 }
