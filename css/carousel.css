@@ -100,7 +100,7 @@
             flex-direction: row;
             flex-wrap: wrap;
             gap: 1rem;;
-            padding: 0 1.2em;
+            padding: 1.4em 1.1em;
 
             .card__description {
                 text-align: left;
@@ -111,38 +111,72 @@
                     color: var(--Onyx);
                 }
             }
-        }
 
-        .card__info :is( .card__title, .card__tag, .card__stars, .card__reviews, .card__price, .card__order ) {
-            align-items: center;
-            border: 1px dotted blue;
-            box-sizing: border-box;
-            display: flex;
-            justify-content: left;
-            margin: 0;
-            padding: 0;
-        }
+            & :is( .card__title, .card__tag, .card__stars, .card__reviews, .card__price, .card__order ) {
+                align-items: center;
+                /* border: 1px dotted blue; */
+                box-sizing: border-box;
+                display: flex;
+                justify-content: left;
+                margin: 0;
+                padding: 0;
+            }
 
-        .card__info :is( .card__title, .card__reviews, .card__price ) {
-            border: 1px solid orange;
-            box-sizing: border-box;
-            flex: 1 0 70%;
+            & :is( .card__title, .card__reviews, .card__price ) {
+                /* border: 1px solid orange; */
+                box-sizing: border-box;
+                flex: 1 0 52%;
+            }
+
+            & :is( .card__tag, .card__stars, .card__order ) {
+                /* border: 1px solid chocolate; */
+                box-sizing: border-box;
+                flex: 0 1 auto;
+            }
+
+            .card__tag, 
+            .card__stars {
+                flex: 0 1 10rem;
+                color: var(--Islamic-Green);
+                padding: 0;
+
+                .fa-fire {
+                    margin-right: 1rem;
+                }
+            }
+
+            .tag {
+                border: 2px solid var(--Islamic-Green);
+                border-radius: .6rem;
+                color: var(--Islamic-Green);
+                padding: 1rem;
+            } 
+
+            .card__stars {
+                border: none;
+                padding-left: 0;
+                flex: 0 1 10rem;
+                padding: 0 1rem;
+            }
+
         }
-        .card__info :is( .card__tag, .card__stars, .card__order ) {
-            border: 1px solid chocolate;
-            box-sizing: border-box;
-            flex: 0 1 auto;
-        }
+        
     }
 
 
     @media ( width > 768px ) {
         .card {
-            flex: 1 0 50%;
+            flex: 1 0 48.8%;
 
             .card__info {
                 .card__description {
                     font-size: 1.6rem;
+                }
+
+                & :is( .card__reviews, .card__price ) {
+                    /* border: 1px solid orange; */
+                    box-sizing: border-box;
+                    flex: 1 0 46%;
                 }
             }
         }
@@ -150,7 +184,7 @@
 
     @media ( width > 1024px ) {
         .card {
-            flex: 1 0 32%;
+            flex: 1 0 32.8%;
         }
     }
 }
