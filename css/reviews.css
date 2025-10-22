@@ -1,0 +1,49 @@
+.rating {
+
+    /* Quitamos el estilo por defecto del input: pero algunos navegadores lo ignoran */
+    & input[type='range'] {
+        appearance: none;
+        -webkit-appearance: none;   /* Chrome, Safari, Edge */
+        -moz-appearance: none;      /* Firefox */
+        position: relative;
+        cursor: pointer;
+        outline: none;
+        background: linear-gradient( 
+            to right, 
+            var(--Islamic-Green) 0% 60%, 
+            var(--Bright-Gray) 60% 100% 
+        );
+        border-radius: 1rem;
+
+        /* Quitamos el estilo por defecto del input: Pinta el track interno (siempre visible) */
+        &::-webkit-slider-runnable-track,       /* Webkit */
+        &::-moz-range-track {                   /* Firefox */
+            background: inherit;                /* Hereda el background del elemento padre*/
+        }
+
+        /* Webkit => Thumb: Chrome, Edge, Safari */
+        &::-webkit-slider-thumb  {
+            -webkit-appearance: none; /* necesario para poder modificarlo */
+            appearance: none;
+            -moz-appearance: none;
+            background: orangered;       /* color de la bolita */
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            cursor: pointer;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Firefox => Thumb */
+        &::-moz-range-thumb {
+            background: orangered;       /* color de la bolita */
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            cursor: pointer;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+        }
+    }
+}
