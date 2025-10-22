@@ -1,49 +1,63 @@
 .rating {
 
-    /* Quitamos el estilo por defecto del input: pero algunos navegadores lo ignoran */
-    & input[type='range'] {
-        appearance: none;
-        -webkit-appearance: none;   /* Chrome, Safari, Edge */
-        -moz-appearance: none;      /* Firefox */
-        position: relative;
-        cursor: pointer;
-        outline: none;
-        background: linear-gradient( 
-            to right, 
-            var(--Islamic-Green) 0% 60%, 
-            var(--Bright-Gray) 60% 100% 
-        );
-        border-radius: 1rem;
+  /* Quitamos el estilo por defecto del input */
+  & input[type='range'] {
+    appearance: none;
+    -webkit-appearance: none;   /* Chrome, Safari, Edge */
+    -moz-appearance: none;      /* Firefox */
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    border-radius: 1rem;
 
-        /* Quitamos el estilo por defecto del input: Pinta el track interno (siempre visible) */
-        &::-webkit-slider-runnable-track,       /* Webkit */
-        &::-moz-range-track {                   /* Firefox */
-            background: inherit;                /* Hereda el background del elemento padre*/
-        }
+    /* Controla el tamaño visual de las estrellas */
+    --star-scale: 16rem; /* ↑ aumenta o ↓ reduce el tamaño */
 
-        /* Webkit => Thumb: Chrome, Edge, Safari */
-        &::-webkit-slider-thumb  {
-            -webkit-appearance: none; /* necesario para poder modificarlo */
-            appearance: none;
-            -moz-appearance: none;
-            background: orangered;       /* color de la bolita */
-            width: 2rem;
-            height: 2rem;
-            border-radius: 50%;
-            border: 2px solid #fff;
-            cursor: pointer;
-            box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
-        }
+    /* Colores de relleno */
+    background: linear-gradient(
+      to right,
+      var(--Islamic-Green) 0% 60%,
+      var(--Bright-Gray) 60% 100%
+    );
 
-        /* Firefox => Thumb */
-        &::-moz-range-thumb {
-            background: orangered;       /* color de la bolita */
-            width: 2rem;
-            height: 2rem;
-            border-radius: 50%;
-            border: 2px solid #fff;
-            cursor: pointer;
-            box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
-        }
+    /* Estrellas (máscaras SVG) */
+    mask: url("data:image/svg+xml;utf8,\
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20'>\
+        <text y='17' font-size='20'>★★★★★</text>\
+      </svg>") left / var(--star-scale) no-repeat;
+
+    -webkit-mask: url("data:image/svg+xml;utf8,\
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20'>\
+        <text y='17' font-size='20'>★★★★★</text>\
+      </svg>") left / var(--star-scale) no-repeat;
+
+    /* Renderiza correctamente el track */
+    &::-webkit-slider-runnable-track,
+    &::-moz-range-track {
+      background: inherit;
     }
+
+    /* Chrome, Edge, Safari */
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      background: orangered;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      cursor: pointer;
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Firefox */
+    &::-moz-range-thumb {
+      background: orangered;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      cursor: pointer;
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    }
+  }
 }
