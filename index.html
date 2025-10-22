@@ -76,13 +76,21 @@
                                 </span>
                             </div>
                             <div class="card__stars">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
+                                <input 
+                                    id="ratingRange"
+                                    type="range"
+                                    min="1"
+                                    max="5"
+                                    step="1"      
+                                    value="3"     
+                                    aria-valuemin="1"
+                                    aria-valuemax="5"
+                                    aria-valuenow="3"
+                                />
                             </div>
-                            <div class="card__reviews">214 Reviews</div>
+                            <div class="card__reviews">
+                                <span id="ratingValue">3 </span>&nbsp;Reviews
+                            </div>
                             <div class="card__description">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam recusandae natus porro voluptatum accusamus ipsum dolore sed ducimus laborum explicabo? Repellat.
                                 </p>
