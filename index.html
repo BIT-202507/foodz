@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/carousel.css">
+    <link rel="stylesheet" href="./css/rating.css">
 </head>
 <body>
     <header class="header">
@@ -76,13 +77,26 @@
                                 </span>
                             </div>
                             <div class="card__stars">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
+                                <div class="rating-container">
+                                    <div class="star-rating" id="starRating">
+                                        <div class="stars-background">
+                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>...
+                                        </div>
+                                        <div class="stars-filled" id="starsFilled">
+                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>...
+                                        </div>
+                                        <input type="range" class="rating-input" id="ratingInput" min="0" max="5" step="0.5" value="4.5">
+                                    </div>
+                                
+            
+                                    <!-- Info adicional (opcional, puedes eliminarlo) -->
+                                    <div class="rating-info">
+                                        Calificación: <span id="currentRating">4.5</span> / 5.0
+                                    </div>
+                                    
+                                </div>
                             </div>
-                            <div class="card__reviews">214 Reviews</div>
+                            <span class="card__reviews" id="reviewCount">214 Reviews</span>
                             <div class="card__description">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam recusandae natus porro voluptatum accusamus ipsum dolore sed ducimus laborum explicabo? Repellat.
                                 </p>

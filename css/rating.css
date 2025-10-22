@@ -1,0 +1,63 @@
+
+
+/* Contenedor principal del rating */
+.rating-container {
+    --letter-spacing: .3rem;
+
+    /* Wrapper que contiene estrellas y el input */
+    .star-rating {
+        border: 1px dotted blue;
+        box-sizing: border-box;
+        position: relative;
+        display: inline-block;
+        /* font-size: 24px; Ajusta este tamaño según necesites */
+        line-height: 1;
+    }
+
+    /* Capa de fondo: estrellas vacías (grises) */
+    .stars-background {
+        position: relative;
+        color: #ddd;
+        letter-spacing: var(--letter-spacing);      /* Separación entre estrellas */
+    }
+
+    /* Capa de relleno: estrellas llenas (amarillas) */
+    .stars-filled {
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: var(--Islamic-Green);
+        overflow: hidden;
+        white-space: nowrap;
+        letter-spacing: var(--letter-spacing);      /* IMPORTANTE: Debe ser igual al de stars-background */
+        width: 0%;                                  /* Se controla dinámicamente con JavaScript */
+        transition: width 0.2s ease;                /* Animación suave */
+    }
+
+    /* Input range invisible sobre las estrellas */
+    .rating-input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        /* Personalización del cursor del slider (opcional) */
+        &::-webkit-slider-thumb {
+            width: 2rem;
+            height: 3rem;
+            cursor: pointer;
+        }
+        &::-moz-range-thumb {
+            width: 2rem;
+            height: 3rem;
+            cursor: pointer;
+        }
+    }
+
+    /* Información adicional del rating (opcional) */
+    .rating-info {
+        margin-top: .5rem;
+        font-size: 1rem;
+    }
+}
