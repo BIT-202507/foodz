@@ -1,63 +1,72 @@
+/* CONTENEDOR PRINCIPAL DE LA CALIFICACIÓN */
 .rating {
+  position: relative;          /* Permite posicionar los elementos internos con coordenadas absolutas */
+  display: inline-block;       /* Mantiene el bloque en línea, ideal para texto o cards */
+  width: min(100%, 200px);     /* Ancho adaptable: usa 100% del contenedor o 200px como máximo */
+  height: 24px;                /* Altura fija igual al tamaño de las estrellas */
+}
 
-  /* Quitamos el estilo por defecto del input */
-  & input[type='range'] {
-    appearance: none;
-    -webkit-appearance: none;   /* Chrome, Safari, Edge */
-    -moz-appearance: none;      /* Firefox */
-    position: relative;
-    cursor: pointer;
-    outline: none;
-    border-radius: 1rem;
+/* SLIDER INVISIBLE QUE CONTROLARÁ EL VALOR DE LA CALIFICACIÓN */
+.rating input[type="range"] {
+  position: absolute;          /* Se superpone sobre las estrellas */
+  inset: 0;                    /* Atajo para top:0; right:0; bottom:0; left:0 → ocupa todo el contenedor */
+  width: 100%;                 /* Coincide con el ancho del contenedor */
+  height: 100%;                /* Coincide con la altura del contenedor */
+  margin: 0;                   /* Elimina márgenes predeterminados del input */
+  appearance: none;            /* Elimina el estilo nativo del navegador */
+  background: transparent;     /* Fondo invisible para ver las estrellas detrás */
+  z-index: 2;                  /* Lo mantiene encima de las estrellas para captar clics */
+  cursor: pointer;             /* Cambia el cursor para indicar que es interactivo */
+}
 
-    /* Controla el tamaño visual de las estrellas */
-    --star-scale: 16rem; /* ↑ aumenta o ↓ reduce el tamaño */
+/* ESTRELLAS GRISES (FONDO O BASE) */
+.rating::before {
+  content: "★★★★★";            /* 5 estrellas representadas como texto */
+  position: absolute;          /* Permite alinearlas al mismo espacio que el slider */
+  /*inset: 0; */                   /* Ocupan todo el área del contenedor */
+  font-size: 24px;             /* Tamaño de las estrellas (debe coincidir con height) */
+  color: #ddd;                 /* Color gris claro para estrellas vacías */
+  display: flex;               /* Facilita el centrado */
+  align-items: center;         /* Centra verticalmente */
+  justify-content: center;     /* Centra horizontalmente */
+  z-index: 1;                  /* Quedan debajo del slider */
+  pointer-events: none;        /* No interfieren con clics */
+}
 
-    /* Colores de relleno */
-    background: linear-gradient(
-      to right,
-      var(--Islamic-Green) 0% 60%,
-      var(--Bright-Gray) 60% 100%
-    );
+/* ESTRELLAS DORADAS (VALOR SELECCIONADO) */
+.rating::after {
+  content: "★★★★★";            /* Mismo texto para superposición */
+  position: absolute;          /* Se colocan encima de las grises */
+  inset: 0;                    /* Ocupan todo el área disponible */
+  font-size: 24px;             /* Mismo tamaño que las grises */
+  color: var(--Islamic-Green); /* Color de las estrellas llenas */
+  width: calc(var(--value, 0) * 20%); /* Calcula el ancho en base a una variable CSS (0–5 estrellas) */
+  overflow: hidden;            /* Solo muestra la parte correspondiente al valor actual */
+  white-space: nowrap;         /* Evita que las estrellas se rompan en líneas */
+  z-index: 1;                  /* Mismo nivel que las grises, pero renderizadas después (quedan encima) */
+  pointer-events: none;        /* No bloquean la interacción del input */
+}
 
-    /* Estrellas (máscaras SVG) */
-    mask: url("data:image/svg+xml;utf8,\
-      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20'>\
-        <text y='17' font-size='20'>★★★★★</text>\
-      </svg>") left / var(--star-scale) no-repeat;
+/* OCULTA EL THUMB DEL RANGE (TODOS LOS NAVEGADORES) */
+.rating input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 0;
+  height: 0;
+  background: transparent;
+  border: none;
+}
 
-    -webkit-mask: url("data:image/svg+xml;utf8,\
-      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20'>\
-        <text y='17' font-size='20'>★★★★★</text>\
-      </svg>") left / var(--star-scale) no-repeat;
+.rating input[type="range"]::-moz-range-thumb {
+  width: 0;
+  height: 0;
+  background: transparent;
+  border: none;
+}
 
-    /* Renderiza correctamente el track */
-    &::-webkit-slider-runnable-track,
-    &::-moz-range-track {
-      background: inherit;
-    }
-
-    /* Chrome, Edge, Safari */
-    &::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      background: orangered;
-      width: 2rem;
-      height: 2rem;
-      border-radius: 50%;
-      border: 2px solid #fff;
-      cursor: pointer;
-      box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
-    }
-
-    /* Firefox */
-    &::-moz-range-thumb {
-      background: orangered;
-      width: 2rem;
-      height: 2rem;
-      border-radius: 50%;
-      border: 2px solid #fff;
-      cursor: pointer;
-      box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
-    }
-  }
+.rating input[type="range"]::-ms-thumb {
+  width: 0;
+  height: 0;
+  background: transparent;
+  border: none;
 }

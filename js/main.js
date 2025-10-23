@@ -1,10 +1,7 @@
-console.log( 'Bienvenidos a Foodz!' );
+console.log("Bienvenidos a Foodz!");
 
-const ratingPage = document.querySelector('#ratingRange');
-const ratingValue = document.querySelector('#ratingValue');
-
-ratingPage.addEventListener( 'input', () => {
-    ratingValue.textContent = ratingPage.value;
-} )
-
-console.log( ratingPage, ratingValue );
+const rating = document.querySelector('.rating input');
+rating.addEventListener('input', e => {
+  const parent = e.target.closest('.rating');
+  parent.style.setProperty('--value', e.target.value);
+});

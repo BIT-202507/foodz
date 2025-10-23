@@ -77,22 +77,15 @@
                                 </span>
                             </div>
                             <div class="card__stars">
-                                <div class="rating">
-                                    <input 
-                                        id="ratingRange"
-                                        type="range"
-                                        min="1"
-                                        max="5"
-                                        step="1"      
-                                        value="3"     
-                                        aria-valuemin="1"
-                                        aria-valuemax="5"
-                                        aria-valuenow="3"
-                                    />
+                                <div class="rating" style="--value: 3.5;">
+                                    <!-- Capa visual: contiene las estrellas y se colorea por --percent -->
+
+                                    <!-- Control real: ocupa exactamente el mismo rect que .stars -->
+                                    <input id="ratingRange" type="range" min="0" max="5" step="0.5" value="3" aria-valuemin="1" aria-valuemax="5" aria-valuenow="3" />
                                 </div>
                             </div>
                             <div class="card__reviews">
-                                <span id="ratingValue">3 </span>&nbsp;Reviews
+                                <span class="rating-value" aria-live="polite">3</span>&nbsp;Reviews
                             </div>
                             <div class="card__description">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam recusandae natus porro voluptatum accusamus ipsum dolore sed ducimus laborum explicabo? Repellat.
